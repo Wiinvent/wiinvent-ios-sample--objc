@@ -11,8 +11,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <WISDK/WISDK-Swift.h>
 
-static NSString * const SAMPLE_CHANNEL_ID = @"1";
-static NSString * const SAMPLE_STREAM_ID = @"1";
+static NSString * const SAMPLE_CHANNEL_ID = @"27";
+static NSString * const SAMPLE_STREAM_ID = @"57";
 static NSString * const SAMPLE_TOKEN = @"1";
 static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4";
 
@@ -59,10 +59,23 @@ static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.c
       }
     };
     
-    // Create overlay data object.
-     WIOverlayData *overlayData = [[WIOverlayData alloc]
-                                   initWithChannelId:SAMPLE_CHANNEL_ID
-                                   streamId:SAMPLE_STREAM_ID env:EnvironmentDEV debug:true];
+    WISDK.onVoted = ^(NSString * userId, NSString * channelId, NSString * streamId, NSString * entryId, NSInteger numPredictSame) {
+        
+    }
+    
+    WISDK.onUserPurchase = ^(NSString * userId, NSInteger productId) {
+        
+    }
+    
+    // CreatV overlay data object.
+    WIOverlayData *overlayData = [[WIOverlayData alloc]
+                                  initWithChannelId: SAMPLE_CHANNEL_ID
+                                  streamId: SAMPLE_STREAM_ID
+                                  thirdPartyToken: "Token"
+                                  platform: nil
+                                  env: EnvironmentDEV
+                                  deviceType: DeviceTypePHONE
+                                  debug: true];
      
      // Add overlays to player view.
      [WISDK addOverlaysToPlayerViewWithContainer:self.view overlayData:overlayData];
