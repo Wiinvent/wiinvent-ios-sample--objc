@@ -28,7 +28,7 @@ static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.c
     [super viewDidLoad];
     
     
-        CGRect heightPlayer = CGRectMake(0, 0, self.view.frame.size.width, 250);
+    CGRect heightPlayer = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         
 
         
