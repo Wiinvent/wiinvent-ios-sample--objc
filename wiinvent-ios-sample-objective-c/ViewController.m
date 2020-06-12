@@ -73,7 +73,12 @@ static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.c
         
         WISDK.onUserPurchase = ^(NSString * userId, NSString * productId) {
             printf("onUserPurchase");
-            
+            double delayInSeconds = 2.0;
+                   dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                   dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                        
+                       [WISDK onUserPurchaseSuccessWithToken:@"1" productId: @"1"];
+                   });
         };
         
     //    WISDK.onVoted = ^(NSString * userId, NSString * channelId, NSString * streamId, NSString * entryId,
@@ -105,7 +110,7 @@ static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.c
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
              
-            [WISDK onUserPurchaseSuccessWithToken:@"1" productId: @"1"];
+            //[WISDK onUserPurchaseSuccessWithToken:@"1" productId: @"1"];
         });
        
 }
