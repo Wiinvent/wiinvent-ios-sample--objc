@@ -6,6 +6,6 @@ target 'wiinvent-ios-sample-objective-c' do
   use_frameworks!
 
   # Pods for wiinvent-ios-sample-objective-c
-  pod 'WISDK', '1.2.4'
+  pod 'WISDK', '1.3.1'
 
 end

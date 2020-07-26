@@ -12,8 +12,8 @@
 #import <WISDK/WISDK-Swift.h>
 
 static NSInteger const SAMPLE_ACCOUNT_ID = 81;
-static NSString * const SAMPLE_CHANNEL_ID = @"34";
-static NSString * const SAMPLE_STREAM_ID = @"154";
+static NSString * const SAMPLE_CHANNEL_ID = @"1";
+static NSString * const SAMPLE_STREAM_ID = @"1";
 static NSString * const SAMPLE_TOKEN = @"1";
 static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4";
 
@@ -29,9 +29,6 @@ static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.c
     
     
     CGRect heightPlayer = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        
-
-        
         
         NSURL *videoUrl = [NSURL URLWithString:SAMPLE_VOD_URL];
         AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:videoUrl];
@@ -73,12 +70,12 @@ static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.c
         
         WISDK.onUserPurchase = ^(NSString * userId, NSString * productId) {
             printf("onUserPurchase");
-            double delayInSeconds = 2.0;
-                   dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-                   dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                        
-                       [WISDK onUserPurchaseSuccessWithToken:@"1" productId: @"1"];
-                   });
+//            double delayInSeconds = 2.0;
+//                   dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//                   dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//
+//                       [WISDK onUserPurchaseSuccessWithToken:@"f69b22139f55dc9b4107c2e2db59f3cf5511f9d6" productId: @"VIETTELTV_PES"];
+//                   });
         };
         
     //    WISDK.onVoted = ^(NSString * userId, NSString * channelId, NSString * streamId, NSString * entryId,
@@ -95,7 +92,8 @@ static NSString * const SAMPLE_VOD_URL = @"http://commondatastorage.googleapis.c
         WIOverlayData *overlayData = [[WIOverlayData alloc]
                                       initWithChannelId: SAMPLE_CHANNEL_ID
                                       streamId: SAMPLE_STREAM_ID
-                                      thirdPartyToken: @"025e2286d574f18e362bcb1f54dda8124eb6ceba"
+//                                      thirdPartyToken: @"02dcd94bc30f0b49b174751837aa52184c9dd2af"
+                                      thirdPartyToken: @"6a2f2a8e3c6dd663abecec9d7dfe9092a1527bbb"
                                       accountId: SAMPLE_ACCOUNT_ID
                                       mappingType: MappingTypeTHIRDPARTY
                                       platform: nil
